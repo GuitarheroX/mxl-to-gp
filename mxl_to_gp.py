@@ -1301,7 +1301,11 @@ def convert(mxl_path: Path, template_path: Path, out_path: Path,
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(
+        description=__doc__,
+        add_help=False,
+    )
+    ap.add_argument("-H", "--help", action="help", help="show this help message and exit")
     ap.add_argument("--mxl", type=Path, default=Path("liz_GPT.mxl"))
     ap.add_argument("--template", type=Path,
                     default=Path(__file__).resolve().parent / "template.gp")

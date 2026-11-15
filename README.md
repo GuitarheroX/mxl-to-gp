@@ -29,7 +29,7 @@ python mxl_to_gp.py --mxl "另一首.mxl" --out "另一首.gp"
 ```bash
 python mxl_to_gp.py \
   --mxl "另一首.mxl" \
-  --template "利兹与青鸟-GPT.gp" \
+  --template "template.gp" \
   --out "另一首.gp" \
   --pitch-mode auto \
   --layout auto
@@ -40,7 +40,8 @@ python mxl_to_gp.py \
 - `--pitch-mode sounding`：所有轨都直接使用 `<pitch>`。
 - `--layout auto`（默认）：按 part 名称分组，把同一组里**小节不重叠**的碎片合并成一条轨；同一组里小节重叠的 part 保留为多条轨（通常是不同声部）。
 - `--layout parts`：每个 `<part>` 单独一条轨，不做任何合并。
-- `--template` 默认使用**脚本所在目录**的 `利兹与青鸟-GPT.gp`，所以可以从任意目录运行；需要别的模板时传绝对路径。
+- `--template` 默认使用**脚本所在目录**的 `template.gp`，所以可以从任意目录运行；需要别的模板时传绝对路径。
+- `-H` / `--help`：打印用法和所有参数说明。
 - 默认**拒绝覆盖已存在的输出文件**；确认覆盖请加 `--force`。
 - `--title` / `--artist` / `--tempo`：覆盖自动提取的标题/作者/速度。
 - `--all-guitar`：把所有轨都按吉他处理（`Transpose -1`、按吉他记谱音高）。适合多吉他合奏、且 part 名称里没有 “Gtr/Guitar” 的谱。
