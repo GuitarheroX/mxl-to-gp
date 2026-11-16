@@ -66,7 +66,7 @@ Audiveris 经常把一页/一个系统拆成多个 `<part>`，所以不能简单
 
 ## 写入 GP 的策略
 
-- **模板**：以 `利兹与青鸟-GPT.gp` 为 GP8 模板，克隆 `Score`、`MasterTrack`、`Track`、样式表、`BinaryStylesheet`、`LayoutConfiguration`、`PartConfiguration`、`Preferences.json`。
+- **模板**：以 `template.gp` 为 GP8 模板，克隆 `Score`、`MasterTrack`、`Track`、样式表、`BinaryStylesheet`、`LayoutConfiguration`、`PartConfiguration`、`Preferences.json`。
 - **轨道**：part 数动态，最多不限制；每条轨默认都是 Nylon Guitar 音色（因为 Guitar Pro 没有人声/钢琴轨时，先统一成吉他，之后在 GP 里改乐器）。
 - **移调**：
   - 名称含 `gtr` / `guitar` 的轨：`Transpose Octave = -1`，按吉他记谱处理，1 弦负数品合法。
@@ -101,3 +101,6 @@ MuseScore 4 的 GP 导入器会拒绝“超拍/缺拍小节”（`Incomplete mea
 - 365 这类合唱谱的 part 名称是 OCR 结果（`A.solo`、`A. 5010`、`Altosolo` 等），轨名只能按原样保留，需要在 GP 里手动重命名/合并。
 - 非吉他轨目前仍用 Nylon Guitar 音色和吉他谱表；打开 GP 后需要手动改乐器。改乐器后，弦/品数据通常会被 GP 忽略，音高以 `Midi` 为准。
 - mxl 本身的 OCR 错误不会被纠正。
+
+## 逆向工程
+GP_FORMAT.md 里记录了当前探索到的 gp 格式的规则。
